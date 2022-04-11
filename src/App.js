@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import MealList from "./components/MealList";
 
 function App() {
   const [mealData, setMealData] = useState(null);
@@ -35,6 +36,7 @@ function App() {
         />
         <button onClick={search}>Get Daily Meal Plan</button>
       </section>
+      {mealData && <MealList mealData={mealData} />}
     </div>
   );
 }
